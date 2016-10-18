@@ -1,0 +1,11 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+application: micro-blog-stream
+version: 1
+
+handlers:
+- url: /.*
+  script: app.app
+  secure: always
