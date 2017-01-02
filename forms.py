@@ -1,5 +1,8 @@
-from wtforms_appengine.ndb import model_form
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import DataRequired
 
-import models
+class NewStreamForm(FlaskForm):
+    name = StringField('name', validators=[DataRequired()])
 
-#ExampleForm = model_form(models.Model)
+
