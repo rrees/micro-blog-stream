@@ -15,6 +15,9 @@ def front_page():
     if flask.request.method == 'GET':
     	form = forms.NewStreamForm()
         return flask.render_template('index.html', form=form)
+
+    form = forms.NewStreamForm()
+    logging.info(form.validate_on_submit())
     return flask.redirect('/')
 
 @app.errorhandler(500)
