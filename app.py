@@ -4,21 +4,14 @@ import os
 import flask
 
 import forms
+import handlers
 
 app = flask.Flask(__name__)
 
 app.secret_key = os.urandom(24)
 
 
-@app.route('/', methods=['GET', 'POST'])
-def front_page():
-    if flask.request.method == 'GET':
-    	form = forms.NewStreamForm()
-        return flask.render_template('index.html', form=form)
-
-    form = forms.NewStreamForm()
-    logging.info(form.validate_on_submit())
-    return flask.redirect('/')
+app.add_url_rule('/', 'index', handlers.front_page, methods=['GET', 'POST'])
 
 @app.errorhandler(500)
 def server_error(e):

@@ -14,8 +14,18 @@
 		{{form.csrf_token}}
 		</div>
 		<div class="form-group">
-			<label for="name">Stream name</label>
-			<input id="name" class="form-control" name="name" type="text" required>
+			<label for="name">Title</label>
+			<input id="name" class="form-control" name="name" type="text">
+		</div>
+
+		<div class="form-group">
+			<label for="content">Content</label>
+			<textarea id="content" class="form-control" name="content" required></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="tags">Tags</label>
+			<input id="tags" class="form-control" name="tags" type="text" required>
 		</div>
 
 		<div class="form-group">
