@@ -8,3 +8,4 @@ class NewPostForm(FlaskForm):
 	title = StringField('title')
 	content = TextAreaField('content', validators=[DataRequired()])
 	tags = custom_fields.TagListField('tags', validators=[DataRequired()])
+	user_id = StringField('user_id', validators=[DataRequired()])

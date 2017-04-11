@@ -3,6 +3,8 @@ import os
 
 import flask
 
+from google.appengine.api import users
+
 import forms
 
 from repositories import posts
@@ -15,7 +17,9 @@ def front_page():
     if flask.request.method == 'GET':
     	form = forms.NewPostForm()
     	recent_posts = posts.recent()
-        return flask.render_template('index.html', form=form, recent_posts=recent_posts)
+    	user = users.get_current_user()
+
+        return flask.render_template('index.html', form=form, recent_posts=recent_posts, user=user)
 
     form = forms.NewPostForm()
     if form.validate_on_submit():
