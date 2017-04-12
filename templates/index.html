@@ -25,7 +25,7 @@
 		<div class="form-group">
 			<label for="private">Private</label>
 			<input id="private" name="private" class="form-control" type="checkbox">
-		</div>	
+		</div>
 
 		<div class="form-group">
 			<label for="content">Content</label>
@@ -43,7 +43,22 @@
 	</form>
 </div>
 
+<div class="post-list">
 {% for post in recent_posts %}
-<p>{{post}}</p>
+<dl class="post-list--post-detail">
+
+<dt>Title</dt>
+<dd>{{post.title}}</dd>
+<dt>Content</dt>
+<dd>{{post.content}}</dd>
+<dt>Tags</dt>
+<dd>{{post.tags}}</dd>
+<dt>Private</dt>
+<dd>{{post.private}}</dd>
+
+</dl>
+
 {% endfor %}
+</div>
+
 {% endblock %}
