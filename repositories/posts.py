@@ -9,5 +9,8 @@ def create_from_form(form):
 	new_post.put()
 	return new_post
 
-def recent():
-	return models.Post.query()
+def recent(user = None):
+	if not user:
+		return models.Post.query()
+
+	return models.Post.query().filter(models.Post.user_id == user.user_id())
