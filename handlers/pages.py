@@ -16,8 +16,10 @@ app.secret_key = os.urandom(24)
 def front_page():
     if flask.request.method == 'GET':
     	form = forms.NewPostForm()
-    	recent_posts = posts.recent()
+    	
     	user = users.get_current_user()
+
+    	recent_posts = posts.recent(user=user)
 
         return flask.render_template('index.html', form=form, recent_posts=recent_posts, user=user)
 
