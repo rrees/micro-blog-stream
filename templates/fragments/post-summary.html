@@ -5,7 +5,13 @@
 <dt>Content</dt>
 <dd>{{post.content}}</dd>
 <dt>Tags</dt>
-<dd>{{post.tags}}</dd>
+<dd>
+	<ul>
+		{% for tag in post.tags %}
+		<li>{{tag}}</li>
+		{% endfor %}
+	</ul>
+</dd>
 <dt>Private</dt>
 <dd>{{post.private}}</dd>
 
