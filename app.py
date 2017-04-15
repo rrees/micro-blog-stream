@@ -12,6 +12,7 @@ app.secret_key = os.urandom(24)
 
 routes = [
 	('/', 'index', handlers.front_page, ['GET', 'POST']),
+	('/posts/new', 'new_post', handlers.posts.new, ['GET']),
 ]
 
 for path, endpoint, handler, methods in routes:

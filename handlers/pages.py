@@ -9,10 +9,6 @@ import forms
 
 from repositories import posts
 
-app = flask.Flask(__name__)
-
-app.secret_key = os.urandom(24)
-
 def front_page():
     if flask.request.method == 'GET':
     	form = forms.NewPostForm()
