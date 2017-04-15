@@ -3,7 +3,6 @@ import os
 
 import flask
 
-import forms
 import handlers
 
 app = flask.Flask(__name__)
@@ -13,6 +12,7 @@ app.secret_key = os.urandom(24)
 routes = [
 	('/', 'index', handlers.front_page, ['GET', 'POST']),
 	('/posts/new', 'new_post', handlers.posts.new, ['GET']),
+	('/posts/new/form', 'new_post_form', handlers.forms.new_post, ['POST']),
 ]
 
 for path, endpoint, handler, methods in routes:

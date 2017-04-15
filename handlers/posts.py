@@ -3,10 +3,10 @@ import flask
 
 from google.appengine.api import users
 
-import forms
+import form_models
 
 def new():
-	form = forms.NewPostForm()
+	form = form_models.NewPostForm()
 
 	user = users.get_current_user()
 
