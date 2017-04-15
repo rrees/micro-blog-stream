@@ -10,8 +10,12 @@ app = flask.Flask(__name__)
 
 app.secret_key = os.urandom(24)
 
+routes = [
+	('/', 'index', handlers.front_page, ['GET', 'POST']),
+]
 
-app.add_url_rule('/', 'index', handlers.front_page, methods=['GET', 'POST'])
+for path, endpoint, handler, methods in routes:
+	app.add_url_rule(path, endpoint, handler, methods=methods)
 
 @app.errorhandler(500)
 def server_error(e):
