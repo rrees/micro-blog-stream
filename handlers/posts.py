@@ -10,6 +10,4 @@ def new():
 
 	user = users.get_current_user()
 
-	recent_posts = []
-
-	return flask.render_template('index.html', form=form, recent_posts=recent_posts, user=user)
+	return flask.render_template('posts/new.html', form=form, user=user)
