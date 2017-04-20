@@ -15,4 +15,9 @@
 <dt>Private</dt>
 <dd>{{post.private}}</dd>
 
+{% if user and user.user_id() == post.user_id %}
+<dt>Actions</dt>
+<dd><a href="/post/{{post.key.urlsafe()}}/edit">Edit</a></dd>
+{% endif %}
+
 </dl>

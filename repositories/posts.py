@@ -1,3 +1,5 @@
+from google.appengine.ext import ndb
+
 import models
 
 def create_from_form(form):
@@ -14,3 +16,9 @@ def recent(user = None, include_private=False):
 		return models.Post.query().filter(models.Post.private == False)
 
 	return models.Post.query().filter(models.Post.user_id == user.user_id())
+
+def post(post_id):
+
+	key = ndb.Key(urlsafe=post_id)
+
+	return key.get()

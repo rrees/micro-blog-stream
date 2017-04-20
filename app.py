@@ -13,6 +13,7 @@ routes = [
 	('/', 'index', handlers.front_page, ['GET', 'POST']),
 	('/posts/new', 'new_post', handlers.posts.new, ['GET']),
 	('/posts/new/form', 'new_post_form', handlers.forms.new_post, ['POST']),
+	('/post/<post_id>/edit', 'edit_post', handlers.posts.edit, ['GET']),
 ]
 
 for path, endpoint, handler, methods in routes:
