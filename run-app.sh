@@ -1,1 +1,1 @@
-dev_appserver.py .
+$GAE_PY_SDK/dev_appserver.py .
