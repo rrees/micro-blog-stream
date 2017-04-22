@@ -25,4 +25,4 @@ def edit(post_id):
 
 	form = form_models.NewPostForm(obj=models.post_as_tuple(post))
 
-	return flask.render_template('posts/new.html', form=form, user=user)
+	return flask.render_template('posts/edit.html', form=form, user=user)
