@@ -12,10 +12,12 @@ def create_from_form(form):
 	return new_post
 
 def recent(user = None, include_private=False):
-	if not user:
-		return models.Post.query().filter(models.Post.private == False)
+	query = models.Post.query().order(-models.Post.updated_datetime)
 
-	return models.Post.query().filter(models.Post.user_id == user.user_id())
+	if not user:
+		return query.filter(models.Post.private == False)
+		
+	return query.filter(models.Post.user_id == user.user_id())
 
 def read_post(post_id):
 
