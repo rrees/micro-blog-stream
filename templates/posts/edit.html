@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container-fluid">
 
-	<form method="POST" action="/posts/new/form">
+	<form method="POST" action="/post/{{post.key.urlsafe()}}/edit/form">
 
 		{% include 'forms/post.html' %}
 

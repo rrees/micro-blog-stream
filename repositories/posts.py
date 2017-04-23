@@ -17,8 +17,16 @@ def recent(user = None, include_private=False):
 
 	return models.Post.query().filter(models.Post.user_id == user.user_id())
 
-def post(post_id):
+def read_post(post_id):
 
 	key = ndb.Key(urlsafe=post_id)
 
 	return key.get()
+
+def update_from_form(post_id, form):
+	post = read_post(post_id)
+
+	form.populate_obj(post)
+
+	post.put()
+	return post

@@ -20,9 +20,9 @@ def edit(post_id):
 
 	user = users.get_current_user()
 
-	post = repositories.posts.post(post_id)
-	logging.info(models.post_as_tuple(post))
+	post = repositories.posts.read_post(post_id)
+	#logging.info(models.post_as_tuple(post))
 
 	form = form_models.NewPostForm(obj=models.post_as_tuple(post))
 
-	return flask.render_template('posts/edit.html', form=form, user=user)
+	return flask.render_template('posts/edit.html', post=post, form=form, user=user)

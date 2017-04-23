@@ -5,12 +5,25 @@
 {% block content %}
 <div class="container-fluid">
 
-{% include 'forms/post.html' %}
+	<form method="POST" action="/posts/new/form">
 
-<div class="post-list">
-{% for post in recent_posts %}
-{% include 'fragments/post-summary.html' %}
-{% endfor %}
+		{% include 'forms/post.html' %}
+
+		
+		<div class="form-group">
+			<button class="btn" type="submit">Create</button>
+		</div>
+	</form>
+</div>
+
+<div class="container-fluid">
+
+	<div class="post-list">
+	{% for post in recent_posts %}
+	{% include 'fragments/post-summary.html' %}
+	{% endfor %}
+	</div>
+
 </div>
 
 {% endblock %}
