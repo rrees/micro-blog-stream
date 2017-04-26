@@ -4,10 +4,13 @@ import os
 import flask
 
 import handlers
+import filters
 
 app = flask.Flask(__name__)
 
 app.secret_key = os.urandom(24)
+
+app.jinja_env.filters['safe_html'] = filters.safe_html
 
 routes = [
 	('/', 'index', handlers.front_page, ['GET', 'POST']),
