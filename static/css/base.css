@@ -7,5 +7,42 @@
 
 .post-list--post-detail	 {
 	min-width: 15rem;
-	padding: 1rem;
+	max-width: 25rem;
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+}
+
+.post-detail--post-content {
+	margin-bottom: 2rem;
+}
+
+.private-label {
+	text-transform: uppercase;
+	font-size: smaller;
+}
+
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 1rem;
+}
+
+.post-detail--action-bar-heading {
+	font-size: small;
+	font-weight: bold;
+}
+
+.post-detail--action-bar--actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 1rem;
+	font-size: small;
 }

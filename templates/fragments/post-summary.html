@@ -1,23 +1,24 @@
-<dl class="post-list--post-detail">
+<article class="post-list--post-detail">
 
-<dt>Title</dt>
-<dd>{{post.title}}</dd>
-<dt>Content</dt>
-<dd>{{post.content|safe_html|safe}}</dd>
-<dt>Tags</dt>
-<dd>
-	<ul>
-		{% for tag in post.tags %}
-		<li>{{tag}}</li>
-		{% endfor %}
-	</ul>
-</dd>
-<dt>Private</dt>
-<dd>{{post.private}}</dd>
-
-{% if user and user.user_id() == post.user_id %}
-<dt>Actions</dt>
-<dd><a href="/post/{{post.key.urlsafe()}}/edit">Edit</a></dd>
+{% if post.title %}
+<h2>{{post.title}}</h2>
 {% endif %}
 
-</dl>
+<div class="post-detail--content">{{post.content|safe_html|safe}}</div>
+
+<ul class="tag-list">
+	{% for tag in post.tags %}
+	<li class="tag-list--tag">{{tag}}</li>
+	{% endfor %}
+</ul>
+
+{% if post.private %}<p class="private-label">This post is private</p>{% endif %}
+
+{% if user and user.user_id() == post.user_id %}
+<h3 class="post-detail--action-bar-heading">Actions</h3>
+<ul class="post-detail--action-bar--actions">
+<li><a href="/post/{{post.key.urlsafe()}}/edit">Edit</a></li>
+</ul>
+{% endif %}
+
+</article>
