@@ -12,13 +12,15 @@
 	{% endfor %}
 </ul>
 
-{% if post.private %}<p class="private-label">This post is private</p>{% endif %}
+{% if post.private %}<p class="private-label">Private</p>{% endif %}
 
 {% if user and user.user_id() == post.user_id %}
-<h3 class="post-detail--action-bar-heading">Actions</h3>
-<ul class="post-detail--action-bar--actions">
-<li><a href="/post/{{post.key.urlsafe()}}/edit">Edit</a></li>
-</ul>
+<details>
+	<summary class="post-detail--action-bar-heading">Actions</summary>
+
+	<ul class="post-detail--action-bar--actions">
+		<li><a href="/post/{{post.key.urlsafe()}}/edit">Edit</a></li>
+	</ul>
 {% endif %}
 
 </article>
