@@ -1,14 +1,4 @@
 
-summary::before {
-  content: '\25B6';
-  margin: 0;
-  padding-right: 0.5rem;
-}
-
-details[open] > summary::before {
-  content: '\25BC';
-}
-
 .post-list {
 	display: flex;
 	flex-wrap: wrap;
