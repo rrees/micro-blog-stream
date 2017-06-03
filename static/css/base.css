@@ -56,3 +56,7 @@ details[open] > summary::before {
 	margin-bottom: 1rem;
 	font-size: small;
 }
+
+textarea.post-entry--content {
+	height: 25vh;
+}
