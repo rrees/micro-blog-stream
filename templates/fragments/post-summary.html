@@ -19,8 +19,10 @@
 	<summary class="post-detail--action-bar-heading">Actions</summary>
 
 	<ul class="post-detail--action-bar--actions">
+		<li><a href="/post/{{post.key.urlsafe()}}">Link</a></li>
 		<li><a href="/post/{{post.key.urlsafe()}}/edit">Edit</a></li>
 	</ul>
+</details>
 {% endif %}
 
 </article>
