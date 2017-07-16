@@ -8,7 +8,7 @@
 
 <ul class="tag-list">
 	{% for tag in post.tags %}
-	<li class="tag-list--tag">{{tag}}</li>
+	<li class="tag-list--tag"><a href="/posts/tag/{{tag}}">{{tag}}</a></li>
 	{% endfor %}
 </ul>
 
@@ -20,7 +20,9 @@
 
 	<ul class="post-detail--action-bar--actions">
 		<li><a href="/post/{{post.key.urlsafe()}}/edit">Edit</a></li>
+
 	</ul>
+</details>
 {% endif %}
 
 </article>

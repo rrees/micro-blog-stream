@@ -32,3 +32,6 @@ def update_from_form(post_id, form):
 
 	post.put()
 	return post
+
+def all_posts_for_tag(user_id, tag_name):
+	return []
