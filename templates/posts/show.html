@@ -1,5 +1,7 @@
 {% extends 'layout.html' %}
 
+{% block title %}{% if post.title %}{{post.title}}{% else %}Post{% endif %}{% endblock %}
+
 {% block content %}
 <article class="post-list--post-detail">
 
