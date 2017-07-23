@@ -3,7 +3,7 @@ api_version: 1
 threadsafe: true
 
 application: micro-blog-stream
-version: 10
+version: 11
 
 handlers:
 - url: /.*
