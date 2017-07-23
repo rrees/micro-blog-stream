@@ -34,4 +34,8 @@ def update_from_form(post_id, form):
 	return post
 
 def all_posts_for_tag(user_id, tag_name):
-	return []
+	query = models.Post.query().order(-models.Post.updated_datetime)
+
+	query.filter(ndb.OR(models.Post.private == False, models.Post.user_id == user_id))
+
+	return query
