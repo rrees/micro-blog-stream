@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}Posts tagged {{tag_name}}{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+	<h2>Posts tagged with <em>{{tag_name}}</em></h2>
+
+	<div class="post-list">
+	{% for post in posts %}
+	{% include 'fragments/post-summary.html' %}
+	{% endfor %}
+	</div>
+
+</div>
+
+{% endblock %}
