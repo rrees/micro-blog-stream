@@ -17,7 +17,9 @@ routes = [
 	('/posts/new', 'new_post', handlers.posts.new, ['GET']),
 	('/posts/new/form', 'new_post_form', handlers.forms.new_post, ['POST']),
 	('/post/<post_id>/edit', 'edit_post', handlers.posts.edit, ['GET']),
+	('/post/<post_id>/actions/delete', 'delete_post', handlers.posts.delete, ['GET']),
 	('/post/<post_id>/edit/form', 'edit_post_form', handlers.forms.edit_post, ['POST']),
+	('/post/<post_id>/delete/form', 'delete_post_form', handlers.forms.delete_post, ['POST']),
 	('/posts/tag/<tag_name>', 'view_by_tag_name', handlers.tags.list, ['GET']),
 	('/post/<post_id>', 'show_post', handlers.posts.show, ['GET']),
 ]

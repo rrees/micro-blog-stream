@@ -33,7 +33,20 @@ def show(post_id):
 
 	post = repositories.posts.read_post(post_id)
 
-	if post.private and not post.user_id == user.user_id:
-		abort(403)
+	if post.private and not post.user_id == user.user_id():
+		flask.abort(403)
 
 	return flask.render_template('posts/show.html', post=post, user=user)
+
+def delete(post_id):
+
+	user = users.get_current_user()
+
+	post = repositories.posts.read_post(post_id)
+
+	if not post.user_id == user.user_id():
+		flask.abort(403)
+
+	form = form_models.DeletePostForm()
+	
+	return flask.render_template('posts/delete.html', post=post, user=user, form = form)

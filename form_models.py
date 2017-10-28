@@ -10,3 +10,6 @@ class NewPostForm(FlaskForm):
 	private = BooleanField('private')
 	tags = custom_fields.TagListField('tags', validators=[DataRequired()])
 	user_id = StringField('user_id', validators=[DataRequired()])
+
+class DeletePostForm(FlaskForm):
+	post_id = StringField('post_id', validators=[DataRequired()])
