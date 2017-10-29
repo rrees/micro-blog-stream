@@ -26,5 +26,5 @@ def delete_post(post_id):
     form = form_models.DeletePostForm()
     if form.validate_on_submit():
         post_id = form.data.get('post_id')
-        post = posts.delete_post(None, post_id)
+        post = posts.delete_post(post_id)
     return flask.redirect('/')

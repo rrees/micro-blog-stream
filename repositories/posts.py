@@ -40,5 +40,8 @@ def all_posts_for_tag(user_id, tag_name):
 
 	return query
 
-def delete_post(user_id, post_id):
-	return None
+def delete_post(post_id):
+	post = read_post(post_id)
+	post.key.delete()
+
+	return post
