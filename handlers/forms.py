@@ -28,3 +28,6 @@ def delete_post(post_id):
         post_id = form.data.get('post_id')
         post = posts.delete_post(post_id)
     return flask.redirect('/')
+
+def search():
+    return flask.redirect('/')

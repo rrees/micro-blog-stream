@@ -22,6 +22,7 @@ routes = [
 	('/post/<post_id>/delete/form', 'delete_post_form', handlers.forms.delete_post, ['POST']),
 	('/posts/tag/<tag_name>', 'view_by_tag_name', handlers.tags.list, ['GET']),
 	('/post/<post_id>', 'show_post', handlers.posts.show, ['GET']),
+	('/search/form', 'search_form', handlers.forms.search, ['POST']),
 ]
 
 for path, endpoint, handler, methods in routes:
