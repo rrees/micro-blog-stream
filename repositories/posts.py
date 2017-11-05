@@ -1,6 +1,11 @@
 from google.appengine.ext import ndb
 
+from google.appengine.api import search
+
 import models
+
+
+posts_index = search.Index(name="posts")
 
 def create_from_form(form):
 	new_post = models.Post()
@@ -31,6 +36,7 @@ def update_from_form(post_id, form):
 	form.populate_obj(post)
 
 	post.put()
+
 	return post
 
 def all_posts_for_tag(user_id, tag_name):
@@ -45,3 +51,7 @@ def delete_post(post_id):
 	post.key.delete()
 
 	return post
+
+def search(search_term):
+	posts_index.search(search_term)
+	return []

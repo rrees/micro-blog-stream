@@ -30,4 +30,5 @@ def delete_post(post_id):
     return flask.redirect('/')
 
 def search():
+    posts.search('test')
     return flask.redirect('/')
