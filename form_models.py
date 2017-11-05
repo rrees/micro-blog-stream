@@ -13,3 +13,6 @@ class NewPostForm(FlaskForm):
 
 class DeletePostForm(FlaskForm):
 	post_id = StringField('post_id', validators=[DataRequired()])
+
+class SearchForm(FlaskForm):
+	search_term = StringField('search_term', validators=[DataRequired()])

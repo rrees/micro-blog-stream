@@ -30,5 +30,8 @@ def delete_post(post_id):
     return flask.redirect('/')
 
 def search():
-    posts.search('test')
+    form = form_models.SearchForm(csrf_enabled=False)
+    if form.validate_on_submit():
+        logging.info('Valid search form')
+        posts.search(form.data.get('search_term'))
     return flask.redirect('/')
