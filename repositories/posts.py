@@ -55,3 +55,8 @@ def delete_post(post_id):
 def search(search_term):
 	posts_index.search(search_term)
 	return []
+
+def all(user_id):
+	query = models.Post.filter(models.Post.user_id == user_id)
+
+	return query

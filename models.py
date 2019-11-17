@@ -21,3 +21,12 @@ def post_as_tuple(post):
 		content=post.content,
 		tags=post.tags,
 		private=post.private)
+
+
+def post_to_dict(post):
+	return {
+		"title": post.title,
+		"content": post.content,
+		"tags": post.tags,
+		"private": post.private,
+	}

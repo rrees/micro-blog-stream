@@ -23,6 +23,7 @@ routes = [
 	('/posts/tag/<tag_name>', 'view_by_tag_name', handlers.tags.list, ['GET']),
 	('/post/<post_id>', 'show_post', handlers.posts.show, ['GET']),
 	('/search/form', 'search_form', handlers.forms.search, ['POST']),
+	('/export', 'export', handlers.pages.export, ['GET']),
 ]
 
 for path, endpoint, handler, methods in routes:
